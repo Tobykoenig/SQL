@@ -1,0 +1,46 @@
+Create Table inventory (id INTEGER PRIMARY KEY, weight INTEGER, name TEXT, quantity INTEGER, price INTEGER, isle INTEGER);
+INSERT INTO inventory VALUES (1, 10, "Dumbell", 6, 10, 1);/** Inventory List;
+(10lb.) Dumbell (6),(10),(1)
+(20lb.) Dumbell (8),(20),(1)
+(30lb.) Dumbell (8),(30),(1)
+(40lb.) Dumbell (8),(40),(1)
+(50lb.) Dumbell (6),(50),(1)
+(60lb.) Dumbell (4),(60),(2)
+(70lb.) Dumbell (4),(70),(2)
+(80lb.) Dumbell (6),(80),(2)
+(10lb.) Barbell (4),(10),(2)
+(20lb.) Barbell (6),(20),(3)
+(30lb.) Barbell (2),(30),(3)
+(40lb.) Barbell (8),(40),(3)
+(50lb.) Barbell (4),(50),(4)
+(60lb.) Barbell (6),(60),(4)
+(70lb.) Barbell (4),(70),(4)
+(80lb.) Barbell (2),(80),(4)
+**/
+
+INSERT INTO inventory VALUES (2, 20, "Dumbell", 8, 20, 1);
+INSERT INTO inventory VALUES (3, 30, "Dumbell", 8, 30, 1);
+INSERT INTO inventory VALUES (4, 40, "Dumbell", 8, 40, 1);
+INSERT INTO inventory VALUES (5, 50, "Dumbell", 6, 50, 1);
+INSERT INTO inventory VALUES (6, 60, "Dumbell", 4, 60, 2);
+INSERT INTO inventory VALUES (7, 70, "Dumbell", 4, 70, 2);
+INSERT INTO inventory VALUES (8, 80, "Dumbell", 6, 80, 2);
+INSERT INTO inventory VALUES (9, 10, "Barbell", 4, 10, 2);
+INSERT INTO inventory VALUES (10, 20, "Barbell", 6, 20, 3);
+INSERT INTO inventory VALUES (11, 30, "Barbell", 2, 30, 3);
+INSERT INTO inventory VALUES (12, 40, "Barbell", 8, 40, 3);
+INSERT INTO inventory VALUES (13, 50, "Barbell", 4, 50, 4);
+INSERT INTO inventory VALUES (14, 60, "Barbell", 6, 60, 4);
+INSERT INTO inventory VALUES (15, 70, "Barbell", 4, 70, 4);
+INSERT INTO inventory VALUES (16, 80, "Barbell", 2, 80, 4);
+
+--Show weights in order by price.
+SELECT * FROM inventory Order by price desc;
+ 
+--How many different weights by weight are in each isle?
+SELECT count (weight) From inventory Group by isle;
+
+--Which weights have 6 or more?
+SELECT * FROM inventory WHERE Quantity >=6 order by quantity asc;
+
+
